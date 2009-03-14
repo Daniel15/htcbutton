@@ -38,6 +38,10 @@ namespace HTCButton
 		public frmMain()
 		{
 			InitializeComponent();
+			// TODO: Remove this when this feature works.
+			tabsMain.TabPages.RemoveAt(1);
+			tabsMain.SelectedIndex = 0;
+
 			// Set the version string
 			lblVersion.Text = String.Format(lblVersion.Text, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
 
@@ -59,7 +63,15 @@ namespace HTCButton
 				string dllFile = (string)doubleTapKey.GetValue("File", "");
 				string className = (string)doubleTapKey.GetValue("Class", "");
 
-				cmbDoubleTap.SelectedItem = dllFile + "/" + className;
+				//cmbDoubleTap.SelectedValue = dllFile + "/" + className;
+				for (int i = 0; i < cmbDoubleTap.Items.Count; i++)
+				{
+					if (((ComboBoxValue)cmbDoubleTap.Items[i]).key == dllFile + "/" + className)
+					{
+						cmbDoubleTap.SelectedIndex = i;
+						break;
+					}
+				}
 			}
 		}
 
