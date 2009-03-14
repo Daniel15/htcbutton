@@ -6,6 +6,7 @@
 using System;
 using System.Windows.Forms;
 using PluginInterface;
+using System.Collections.Generic;
 
 namespace HelloWorld2Plugin
 {
@@ -18,14 +19,19 @@ namespace HelloWorld2Plugin
 
 		/*
 		 * This is the main difference between this plugin and the other "Hello
-		 * World": The ConfigInterface. The UserControl returned here will be 
-		 * shown in the GUI config
+		 * World": The ConfigInterface. ConfigInterface is a property that 
+		 * stores our config GUI. 
+		 * 
+		 * Take a look at frmSettings.cs to see how the settings are saved.
 		 */
-		public override UserControl ConfigInterface { get { return new settings(); } }
+		public override void InitializeGUI()
+		{
+			ConfigInterface = new frmSettings();
+		}
 
 		public override void Execute()
 		{
-			MessageBox.Show("Hello world!");
+			MessageBox.Show(String.Format("Hello world! You entered {0}", GetSetting("text", "nothing")));
 		}
 	}
 }

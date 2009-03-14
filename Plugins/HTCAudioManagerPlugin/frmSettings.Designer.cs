@@ -1,6 +1,6 @@
 ﻿namespace HTCAudioManagerPlugin
 {
-	partial class settings
+	partial class frmSettings
 	{
 		/// <summary> 
 		/// Required designer variable.

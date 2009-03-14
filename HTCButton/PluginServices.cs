@@ -98,8 +98,14 @@ namespace HTCButton
 
 					Debug.WriteLine(String.Format("=> Found plugin class {0}", classType), "PluginServices");
 
-					// Load this plugin and add it to our list.
+					// Load this plugin
 					Plugin pluginInternal = (Plugin)Activator.CreateInstance(pluginAssembly.GetType(classType.FullName));
+					
+					// If it's got a GUI, we need to init that.
+					if (pluginInternal is PluginWithSettings)
+						((PluginWithSettings)pluginInternal).InitializeGUI();
+
+					// Add it to our list
 					AvailablePlugin plugin = new AvailablePlugin(fileName, classType.FullName, pluginInternal);
 					_plugins.Add(fileName + '/' + classType.FullName, plugin);
 

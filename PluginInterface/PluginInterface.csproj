@@ -80,6 +80,9 @@
     <Compile Include="IPlugin.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="PluginServices.cs" />
+    <Compile Include="PluginSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="PluginWithSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

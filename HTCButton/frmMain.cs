@@ -63,12 +63,6 @@ namespace HTCButton
 			lblDoubleTapVersion.Text = String.Format((string)lblDoubleTapVersion.Tag, plugin.Plugin.Version);
 
 			pnlDoubleTap.Controls.Clear();
-			/*// Any configuration stuffs?
-			if (plugin.Plugin.ConfigInterface != null)
-			{
-				plugin.Plugin.ConfigInterface.Dock = DockStyle.Fill;
-				pnlDoubleTap.Controls.Add(plugin.Plugin.ConfigInterface);
-			}*/
 
 			// Is this a plugin with a GUI?
 			if (plugin.Plugin is PluginWithSettings)
@@ -81,13 +75,34 @@ namespace HTCButton
 
 		private void menuItemSave_Click(object sender, EventArgs e)
 		{
-			RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY);
+			RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY, true);
 
-			// Settings for "Double Tap"
-			AvailablePlugin doubleTap = ((ComboBoxValue)cmbDoubleTap.SelectedItem).value;
+			// Settings for "Double Tap".
+			// Now we make a new one
 			RegistryKey doubleTapKey = regKey.OpenSubKey("DoubleTap", true);
+
+			// Delete all the current values
+			foreach (string value in doubleTapKey.GetValueNames())
+				doubleTapKey.DeleteValue(value);
+
+			// Get the plugin we're using.
+			AvailablePlugin doubleTap = ((ComboBoxValue)cmbDoubleTap.SelectedItem).value;
+
+			// If it has settings, we need to save those
+			if (doubleTap.Plugin is PluginWithSettings)
+			{
+				PluginWithSettings doubleTapPlugin = (PluginWithSettings)doubleTap.Plugin;
+				Dictionary<string, string> settings = doubleTapPlugin.SaveSettings();
+				foreach (KeyValuePair<string, string> kvp in settings)
+				{
+					doubleTapKey.SetValue(kvp.Key, kvp.Value);
+				}
+			}
+			// Save info on the plugin itself.
 			doubleTapKey.SetValue("File", doubleTap.FileName);
 			doubleTapKey.SetValue("Class", doubleTap.Class);
+			// All done!
+			doubleTapKey.Close();
 		}
 	}
 }
