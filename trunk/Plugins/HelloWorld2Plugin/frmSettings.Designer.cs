@@ -1,6 +1,6 @@
 ﻿namespace HelloWorld2Plugin
 {
-	partial class settings
+	partial class frmSettings
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -29,6 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -38,14 +40,30 @@
 			this.label1.Size = new System.Drawing.Size(918, 36);
 			this.label1.Text = "Configuration stuffs would go in here!";
 			// 
-			// settings
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(4, 48);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(193, 40);
+			this.label2.Text = "Enter some text:";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(203, 47);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(258, 41);
+			this.textBox1.TabIndex = 2;
+			// 
+			// frmSettings
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Name = "settings";
+			this.Name = "frmSettings";
 			this.Size = new System.Drawing.Size(464, 178);
 			this.ResumeLayout(false);
 
@@ -54,5 +72,7 @@
 		#endregion
 
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox textBox1;
 	}
 }

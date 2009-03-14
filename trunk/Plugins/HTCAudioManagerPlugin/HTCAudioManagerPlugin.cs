@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using PluginInterface;
+using System.Collections.Generic;
 
 namespace HTCAudioManagerPlugin
 {
@@ -11,7 +12,10 @@ namespace HTCAudioManagerPlugin
 		public override string Author { get { return "Daniel15"; } }
 		public override string Version { get { return "0.1 prerelease"; } }
 
-		public override UserControl ConfigInterface { get { return new settings(); } }
+		public override void InitializeGUI()
+		{
+			ConfigInterface = new frmSettings();
+		}
 
 		public override void Execute()
 		{

@@ -6,12 +6,13 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using PluginInterface;
 
-namespace HelloWorld2Plugin
+namespace HTCAudioManagerPlugin
 {
-	public partial class settings : UserControl
+	public partial class frmSettings : PluginSettingsControl
 	{
-		public settings()
+		public frmSettings()
 		{
 			InitializeComponent();
 		}

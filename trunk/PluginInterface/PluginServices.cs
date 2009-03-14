@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Win32;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace PluginInterface
 {
@@ -33,6 +34,13 @@ namespace PluginInterface
 			string className = (string)regKey.GetValue("Class");
 			Assembly pluginAssembly = Assembly.LoadFrom(_pluginDir + "\\" + dllFile);
 			Plugin plugin = (Plugin)pluginAssembly.CreateInstance(className);
+
+			// If it uses settings, tell it where they are
+			if (plugin is PluginWithSettings)
+			{
+				Debug.WriteLine(String.Format("Loading settings from {0}", REGISTRY_KEY + "\\" + type), "PluginServices");
+				((PluginWithSettings)plugin).SettingsRegKey = REGISTRY_KEY + "\\" + type;
+			}
 
 			// Actually run it.
 			plugin.Execute();
