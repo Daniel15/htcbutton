@@ -30,5 +30,21 @@ namespace HTCAudioManagerPlugin
 
 			return settings;
 		}
+
+		public override void LoadSettings()
+		{
+			switch (GetSetting("action", "playpause"))
+			{
+				case "next":
+					radNext.Checked = true;
+					break;
+				case "prev":
+					radPrev.Checked = true;
+					break;
+				default:
+					radPlayPause.Checked = true;
+					break;
+			}
+		}
 	}
 }

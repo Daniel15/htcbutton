@@ -50,9 +50,9 @@ namespace HTCButton
 			}
 
 			// Now, what plugins have we chosen?
-			RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY);
+			RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY, true);
 
-			RegistryKey doubleTapKey = regKey.OpenSubKey("DoubleTap");
+			RegistryKey doubleTapKey = regKey.CreateSubKey("DoubleTap");
 			// Do we have some info on double tap?
 			if (doubleTapKey != null && (string)doubleTapKey.GetValue("File", "") != "")
 			{

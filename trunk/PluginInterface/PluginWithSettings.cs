@@ -34,6 +34,12 @@ namespace PluginInterface
 			return _configInterface.SaveSettings();
 		}
 
+		/// <summary>
+		/// Get a particular setting
+		/// </summary>
+		/// <param name="key">Setting to get</param>
+		/// <param name="defaultValue">Default value to use</param>
+		/// <returns>What the setting is set to, or defaultValue if not set</returns>
 		public string GetSetting(string key, string defaultValue)
 		{
 			return (string)_settingsKey.GetValue(key, defaultValue);
