@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld2Plugin", "Plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTCAudioManagerPlugin", "Plugins\HTCAudioManagerPlugin\HTCAudioManagerPlugin.csproj", "{EE2270CA-E39E-46CC-B999-012DBDD79ACC}"
 EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "Setup", "Setup\Setup.vddproj", "{6A4F97EE-FE59-4B2D-BB92-2CC802737AD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,8 @@ Global
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6A4F97EE-FE59-4B2D-BB92-2CC802737AD7}.Debug|Any CPU.ActiveCfg = Debug
+		{6A4F97EE-FE59-4B2D-BB92-2CC802737AD7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
