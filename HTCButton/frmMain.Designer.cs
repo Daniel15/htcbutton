@@ -199,7 +199,7 @@
 			this.Location = new System.Drawing.Point(0, 52);
 			this.Menu = this.menuMain;
 			this.Name = "frmMain";
-			this.Text = "HandsfreeButton";
+			this.Text = "HTCButton";
 			this.tabGeneral.ResumeLayout(false);
 			this.tabsMain.ResumeLayout(false);
 			this.tabDoubleTap.ResumeLayout(false);
