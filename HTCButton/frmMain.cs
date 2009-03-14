@@ -46,7 +46,20 @@ namespace HTCButton
 			foreach (KeyValuePair<string, AvailablePlugin> kvp in PluginServices.Plugins)
 			{
 				cmbDoubleTap.Items.Add(new ComboBoxValue(kvp.Key, kvp.Value));
-				cmbHold.Items.Add(new ComboBoxValue(kvp.Key, kvp.Value));
+				//cmbHold.Items.Add(new ComboBoxValue(kvp.Key, kvp.Value));
+			}
+
+			// Now, what plugins have we chosen?
+			RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY);
+
+			RegistryKey doubleTapKey = regKey.OpenSubKey("DoubleTap");
+			// Do we have some info on double tap?
+			if (doubleTapKey != null && (string)doubleTapKey.GetValue("File", "") != "")
+			{
+				string dllFile = (string)doubleTapKey.GetValue("File", "");
+				string className = (string)doubleTapKey.GetValue("Class", "");
+
+				cmbDoubleTap.SelectedItem = dllFile + "/" + className;
 			}
 		}
 
@@ -69,6 +82,9 @@ namespace HTCButton
 			{
 				PluginWithSettings pws = (PluginWithSettings)plugin.Plugin;
 				pws.ConfigInterface.Dock = DockStyle.Fill;
+				// Before we add it, let's tell it to load the settings.
+				pws.SettingsRegKey = REGISTRY_KEY + "\\DoubleTap";
+				pws.LoadSettings();
 				pnlDoubleTap.Controls.Add(pws.ConfigInterface);
 			}
 		}
@@ -78,9 +94,8 @@ namespace HTCButton
 			RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY, true);
 
 			// Settings for "Double Tap".
-			// Now we make a new one
-			RegistryKey doubleTapKey = regKey.OpenSubKey("DoubleTap", true);
-
+			//RegistryKey doubleTapKey = regKey.OpenSubKey("DoubleTap", true);
+			RegistryKey doubleTapKey = regKey.CreateSubKey("DoubleTap");
 			// Delete all the current values
 			foreach (string value in doubleTapKey.GetValueNames())
 				doubleTapKey.DeleteValue(value);
@@ -97,12 +112,17 @@ namespace HTCButton
 				{
 					doubleTapKey.SetValue(kvp.Key, kvp.Value);
 				}
+
+				doubleTapPlugin.LoadSettings();
+
 			}
 			// Save info on the plugin itself.
 			doubleTapKey.SetValue("File", doubleTap.FileName);
 			doubleTapKey.SetValue("Class", doubleTap.Class);
 			// All done!
 			doubleTapKey.Close();
+
+			MessageBox.Show("The settings were saved.", "HTCButton", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
 		}
 	}
 }

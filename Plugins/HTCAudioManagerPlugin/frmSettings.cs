@@ -16,5 +16,19 @@ namespace HTCAudioManagerPlugin
 		{
 			InitializeComponent();
 		}
+
+		public override Dictionary<String, String> SaveSettings()
+		{
+			Dictionary<string, string> settings = new Dictionary<string, string>();
+
+			if (radNext.Checked)
+				settings.Add("action", "next");
+			else if (radPrev.Checked)
+				settings.Add("action", "prev");
+			else
+				settings.Add("action", "playpause");
+
+			return settings;
+		}
 	}
 }

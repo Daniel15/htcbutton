@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using PluginInterface;
 using System.Collections.Generic;
+using HTCAudioManagerControl;
 
 namespace HTCAudioManagerPlugin
 {
@@ -19,7 +20,32 @@ namespace HTCAudioManagerPlugin
 
 		public override void Execute()
 		{
-			MessageBox.Show("Hello world!");
+			AudioManagerControl amc;
+
+			// Try to connect to AudioManager
+			try
+			{
+				amc = new AudioManagerControl();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Could not connect to AudioManager - " + ex.Message, "HTCAudioManagerPlugin");
+				return;
+			}
+
+			// What are we actually doing?
+			switch (GetSetting("action", "playpause"))
+			{
+				case "next":
+					amc.Next();
+					break;
+				case "prev":
+					amc.Prev();
+					break;
+				default:
+					amc.PlayPause();
+					break;
+			}
 		}
 	}
 }

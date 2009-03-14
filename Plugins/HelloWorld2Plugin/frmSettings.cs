@@ -25,5 +25,11 @@ namespace HelloWorld2Plugin
 			settings.Add("text", textBox1.Text);
 			return settings;
 		}
+
+		// And likewise, the loading magic
+		public override void LoadSettings()
+		{
+			textBox1.Text = GetSetting("text", "nothing");
+		}
 	}
 }

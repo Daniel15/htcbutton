@@ -20,7 +20,11 @@ namespace PluginInterface
 		public PluginSettingsControl ConfigInterface
 		{
 			get { return _configInterface; }
-			set { _configInterface = value; }
+			set
+			{ 
+				_configInterface = value;
+				_configInterface.Owner = this;
+			}
 		}
 
 		public abstract void InitializeGUI();
@@ -33,6 +37,11 @@ namespace PluginInterface
 		public string GetSetting(string key, string defaultValue)
 		{
 			return (string)_settingsKey.GetValue(key, defaultValue);
+		}
+
+		public void LoadSettings()
+		{
+			_configInterface.LoadSettings();
 		}
 
 		/// <summary>
