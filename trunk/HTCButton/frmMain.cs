@@ -10,11 +10,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using PluginInterface;
+using Microsoft.Win32;
 
 namespace HTCButton
 {
 	public partial class frmMain : Form
 	{
+		private const string REGISTRY_KEY = @"SOFTWARE\Daniel15\HTCButton";
+
 		private class ComboBoxValue
 		{
 			public string key;
@@ -74,6 +77,17 @@ namespace HTCButton
 				pws.ConfigInterface.Dock = DockStyle.Fill;
 				pnlDoubleTap.Controls.Add(pws.ConfigInterface);
 			}
+		}
+
+		private void menuItemSave_Click(object sender, EventArgs e)
+		{
+			RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY);
+
+			// Settings for "Double Tap"
+			AvailablePlugin doubleTap = ((ComboBoxValue)cmbDoubleTap.SelectedItem).value;
+			RegistryKey doubleTapKey = regKey.OpenSubKey("DoubleTap", true);
+			doubleTapKey.SetValue("File", doubleTap.FileName);
+			doubleTapKey.SetValue("Class", doubleTap.Class);
 		}
 	}
 }

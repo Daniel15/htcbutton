@@ -33,6 +33,7 @@
 			this.lblVersion = new System.Windows.Forms.Label();
 			this.tabsMain = new System.Windows.Forms.TabControl();
 			this.tabDoubleTap = new System.Windows.Forms.TabPage();
+			this.lblDoubleTapVersion = new System.Windows.Forms.Label();
 			this.lblDoubleTapAuthor = new System.Windows.Forms.Label();
 			this.pnlDoubleTap = new System.Windows.Forms.Panel();
 			this.lblDoubleTapDesc = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
 			this.menuMain = new System.Windows.Forms.MainMenu();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.menuItemSave = new System.Windows.Forms.MenuItem();
-			this.lblDoubleTapVersion = new System.Windows.Forms.Label();
 			this.tabGeneral.SuspendLayout();
 			this.tabsMain.SuspendLayout();
 			this.tabDoubleTap.SuspendLayout();
@@ -57,7 +57,7 @@
 			this.tabGeneral.Controls.Add(this.lblVersion);
 			this.tabGeneral.Location = new System.Drawing.Point(0, 0);
 			this.tabGeneral.Name = "tabGeneral";
-			this.tabGeneral.Size = new System.Drawing.Size(480, 492);
+			this.tabGeneral.Size = new System.Drawing.Size(472, 498);
 			this.tabGeneral.Text = "About";
 			// 
 			// lblWebsite
@@ -100,6 +100,14 @@
 			this.tabDoubleTap.Name = "tabDoubleTap";
 			this.tabDoubleTap.Size = new System.Drawing.Size(480, 492);
 			this.tabDoubleTap.Text = "Double-tap Options";
+			// 
+			// lblDoubleTapVersion
+			// 
+			this.lblDoubleTapVersion.Location = new System.Drawing.Point(7, 131);
+			this.lblDoubleTapVersion.Name = "lblDoubleTapVersion";
+			this.lblDoubleTapVersion.Size = new System.Drawing.Size(466, 40);
+			this.lblDoubleTapVersion.Tag = "Version: {0}";
+			this.lblDoubleTapVersion.Text = "Version: {0}";
 			// 
 			// lblDoubleTapAuthor
 			// 
@@ -146,7 +154,7 @@
 			this.tabHold.Controls.Add(this.lblHold);
 			this.tabHold.Location = new System.Drawing.Point(0, 0);
 			this.tabHold.Name = "tabHold";
-			this.tabHold.Size = new System.Drawing.Size(480, 492);
+			this.tabHold.Size = new System.Drawing.Size(472, 498);
 			this.tabHold.Text = "Hold Options";
 			// 
 			// cmbHold
@@ -178,14 +186,7 @@
 			// menuItemSave
 			// 
 			this.menuItemSave.Text = "Save Changes";
-			// 
-			// lblDoubleTapVersion
-			// 
-			this.lblDoubleTapVersion.Location = new System.Drawing.Point(7, 131);
-			this.lblDoubleTapVersion.Name = "lblDoubleTapVersion";
-			this.lblDoubleTapVersion.Size = new System.Drawing.Size(466, 40);
-			this.lblDoubleTapVersion.Tag = "Version: {0}";
-			this.lblDoubleTapVersion.Text = "Version: {0}";
+			this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
 			// 
 			// frmMain
 			// 
