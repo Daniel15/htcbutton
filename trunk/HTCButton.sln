@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTCButton", "HTCButton\HTCButton.csproj", "{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterface", "PluginInterface\PluginInterface.csproj", "{8624CBC5-621D-4A3A-A407-B192CE19BF5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{6A097AB2-DF17-4EFA-9B5C-BBFE6223883F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldPlugin", "Plugins\HelloWorldPlugin\HelloWorldPlugin.csproj", "{491010A1-3BE6-4161-8E2B-56693F829E7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld2Plugin", "Plugins\HelloWorld2Plugin\HelloWorld2Plugin.csproj", "{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTCAudioManagerPlugin", "Plugins\HTCAudioManagerPlugin\HTCAudioManagerPlugin.csproj", "{EE2270CA-E39E-46CC-B999-012DBDD79ACC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{491010A1-3BE6-4161-8E2B-56693F829E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{491010A1-3BE6-4161-8E2B-56693F829E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{491010A1-3BE6-4161-8E2B-56693F829E7E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{491010A1-3BE6-4161-8E2B-56693F829E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{491010A1-3BE6-4161-8E2B-56693F829E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{491010A1-3BE6-4161-8E2B-56693F829E7E} = {6A097AB2-DF17-4EFA-9B5C-BBFE6223883F}
+		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F} = {6A097AB2-DF17-4EFA-9B5C-BBFE6223883F}
+		{EE2270CA-E39E-46CC-B999-012DBDD79ACC} = {6A097AB2-DF17-4EFA-9B5C-BBFE6223883F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = 
+	EndGlobalSection
+EndGlobal
