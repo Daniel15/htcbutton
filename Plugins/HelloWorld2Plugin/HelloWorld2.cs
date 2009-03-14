@@ -32,7 +32,9 @@ namespace HelloWorld2Plugin
 
 		public override void Execute()
 		{
-			MessageBox.Show(String.Format("Hello world! You entered {0}", GetSetting("text", "nothing")));
+			// Here we get the "text" setting!
+			string text = GetSetting("text", "nothing");
+			MessageBox.Show(String.Format("Hello world! You entered {0}", text));
 		}
 	}
 }

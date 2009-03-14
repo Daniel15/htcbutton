@@ -18,15 +18,18 @@ namespace HelloWorld2Plugin
 			InitializeComponent();
 		}
 
-		// Here's our saving magic
-		public override Dictionary<string, string> SaveSettings()
+		// Here's our saving magic. Used in the GUI :)
+		public override Dictionary<String, String> SaveSettings()
 		{
 			Dictionary<string, string> settings = new Dictionary<string, string>();
 			settings.Add("text", textBox1.Text);
 			return settings;
 		}
 
-		// And likewise, the loading magic
+		/* And likewise, the loading magic, also for the GUI.
+		 * Notice, this is to load stuff ONLY for the GUI. For running the 
+		 * plugin itself, you load the needed settings in the Execute() function
+		 */
 		public override void LoadSettings()
 		{
 			textBox1.Text = GetSetting("text", "nothing");
