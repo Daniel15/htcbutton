@@ -22,7 +22,8 @@ namespace HelloWorld2Plugin
 		 * World": The ConfigInterface. ConfigInterface is a property that 
 		 * stores our config GUI. 
 		 * 
-		 * Take a look at frmSettings.cs to see how the settings are saved.
+		 * Take a look at frmSettings.cs to see how the settings are loaded and
+		 * saved.
 		 */
 		public override void InitializeGUI()
 		{

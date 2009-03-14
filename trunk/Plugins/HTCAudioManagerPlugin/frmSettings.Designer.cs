@@ -28,44 +28,44 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
+			this.radPrev = new System.Windows.Forms.RadioButton();
+			this.radNext = new System.Windows.Forms.RadioButton();
+			this.radPlayPause = new System.Windows.Forms.RadioButton();
 			this.SuspendLayout();
 			// 
-			// radioButton1
+			// radPrev
 			// 
-			this.radioButton1.Location = new System.Drawing.Point(4, 4);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(457, 40);
-			this.radioButton1.TabIndex = 0;
-			this.radioButton1.Text = "Go to previous song";
+			this.radPrev.Location = new System.Drawing.Point(4, 4);
+			this.radPrev.Name = "radPrev";
+			this.radPrev.Size = new System.Drawing.Size(457, 40);
+			this.radPrev.TabIndex = 0;
+			this.radPrev.Text = "Go to previous song";
 			// 
-			// radioButton2
+			// radNext
 			// 
-			this.radioButton2.Location = new System.Drawing.Point(4, 50);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(457, 40);
-			this.radioButton2.TabIndex = 1;
-			this.radioButton2.Text = "Go to next song";
+			this.radNext.Location = new System.Drawing.Point(4, 50);
+			this.radNext.Name = "radNext";
+			this.radNext.Size = new System.Drawing.Size(457, 40);
+			this.radNext.TabIndex = 1;
+			this.radNext.Text = "Go to next song";
 			// 
-			// radioButton3
+			// radPlayPause
 			// 
-			this.radioButton3.Location = new System.Drawing.Point(4, 96);
-			this.radioButton3.Name = "radioButton3";
-			this.radioButton3.Size = new System.Drawing.Size(457, 40);
-			this.radioButton3.TabIndex = 2;
-			this.radioButton3.Text = "Play/Pause";
+			this.radPlayPause.Location = new System.Drawing.Point(4, 96);
+			this.radPlayPause.Name = "radPlayPause";
+			this.radPlayPause.Size = new System.Drawing.Size(457, 40);
+			this.radPlayPause.TabIndex = 2;
+			this.radPlayPause.Text = "Play/Pause";
 			// 
-			// settings
+			// frmSettings
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.SystemColors.Window;
-			this.Controls.Add(this.radioButton3);
-			this.Controls.Add(this.radioButton2);
-			this.Controls.Add(this.radioButton1);
-			this.Name = "settings";
+			this.Controls.Add(this.radPlayPause);
+			this.Controls.Add(this.radNext);
+			this.Controls.Add(this.radPrev);
+			this.Name = "frmSettings";
 			this.Size = new System.Drawing.Size(464, 178);
 			this.ResumeLayout(false);
 
@@ -73,8 +73,8 @@
 
 		#endregion
 
-		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.RadioButton radioButton2;
-		private System.Windows.Forms.RadioButton radioButton3;
+		private System.Windows.Forms.RadioButton radPrev;
+		private System.Windows.Forms.RadioButton radNext;
+		private System.Windows.Forms.RadioButton radPlayPause;
 	}
 }

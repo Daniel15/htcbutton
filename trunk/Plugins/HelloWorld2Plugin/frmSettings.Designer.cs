@@ -59,12 +59,11 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.SystemColors.Window;
-			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Name = "frmSettings";
-			this.Size = new System.Drawing.Size(464, 178);
+			this.Size = new System.Drawing.Size(466, 180);
 			this.ResumeLayout(false);
 
 		}
