@@ -11,7 +11,7 @@ namespace HTCAudioManagerPlugin
 		public override string Name { get { return "HTC AudioManager Controller"; } }
 		public override string Description { get { return "Plugin to control the HTC TouchFLO3D AudioManager"; } }
 		public override string Author { get { return "Daniel15"; } }
-		public override string Version { get { return "0.1 prerelease"; } }
+		public override string Version { get { return "0.0.2"; } }
 
 		public override void InitializeGUI()
 		{

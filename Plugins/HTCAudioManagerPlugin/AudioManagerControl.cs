@@ -44,7 +44,12 @@ namespace HTCAudioManagerControl
 		{
 			try
 			{
+				// For newer devices (Touch Pro, etc.)
 				_handle = FindWindowCE("AUDIO_MANAGER_ENG", null);
+				// If nothing, it might be an older one.
+				if (_handle == IntPtr.Zero)
+					_handle = FindWindowCE("AUDIO_MANAGER", null);
+				// Still nothing?
 				if (_handle == IntPtr.Zero)
 					throw new Exception("Cannot find AudioManager window");
 
