@@ -1,0 +1,9 @@
+#summary List of things that need to be done
+#labels Phase-Design
+
+ * Add "press and hold"
+ * Support other media players
+  * S2P
+ * Doesn't work on older phones
+  * http://code.google.com/p/audiomanager/issues/detail?id=1
+ * Needs option to suspend screen after use
