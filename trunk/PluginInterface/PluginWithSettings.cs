@@ -13,41 +13,43 @@ namespace PluginInterface
 {
 	abstract public class PluginWithSettings : Plugin
 	{
-
-		protected PluginSettingsControl _configInterface;
+		// This is used when actually running the plugin.
 		private RegistryKey _settingsKey;
-
-		public PluginSettingsControl ConfigInterface
-		{
-			get { return _configInterface; }
-			set
-			{ 
-				_configInterface = value;
-				_configInterface.Owner = this;
-			}
-		}
-
-		public abstract void InitializeGUI();
-
-		public Dictionary<String, String> SaveSettings()
-		{
-			return _configInterface.SaveSettings();
-		}
+		// An array of our config interfaces
+		private Dictionary<String, PluginSettingsControl> _configInterfaces = new Dictionary<string,PluginSettingsControl>();
 
 		/// <summary>
-		/// Get a particular setting
+		/// Initialise our array of GUI configuration panels. Each "type" of 
+		/// plugin (double tap, tap and hold, etc.) require one panel, so as to
+		/// keep them all separate. If the same plugin is used on two types, 
+		/// their settings are both different.
+		/// </summary>
+		/// <param name="guiNames"></param>
+		public void InitializeGUIs(string[] guiNames)
+		{
+			// Delete any existing ones.
+			_configInterfaces.Clear();
+			// Now we need to go through all the ones we need to create.
+			foreach (string guiName in guiNames)
+				_configInterfaces.Add(guiName, InitializeGUI());
+		}
+
+		public PluginSettingsControl ConfigInterface(string interfaceName)
+		{
+			return _configInterfaces[interfaceName];
+		}
+
+		public abstract PluginSettingsControl InitializeGUI();
+
+		/// <summary>
+		/// Get a particular setting. Used in the plugin itself.
 		/// </summary>
 		/// <param name="key">Setting to get</param>
 		/// <param name="defaultValue">Default value to use</param>
 		/// <returns>What the setting is set to, or defaultValue if not set</returns>
-		public string GetSetting(string key, string defaultValue)
+		protected string GetSetting(string key, string defaultValue)
 		{
 			return (string)_settingsKey.GetValue(key, defaultValue);
-		}
-
-		public void LoadSettings()
-		{
-			_configInterface.LoadSettings();
 		}
 
 		/// <summary>

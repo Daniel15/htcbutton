@@ -44,6 +44,8 @@ namespace HTCButton
 
 	static class PluginServices
 	{
+		static private readonly string[] _guiNames = new string[] {"doubleTap", "hold"};
+
 		static private string _pluginDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase) + "\\Plugins";
 		//private IDictionary<string, AvailablePluginFile> _pluginFiles;
 		static private Dictionary<string, AvailablePlugin> _plugins;
@@ -75,23 +77,6 @@ namespace HTCButton
 					if (!classType.IsPublic || classType.IsAbstract)
 						continue;
 
-					/*
-					 * // Now we look to see if it implements IPlugin
-					bool isValid = false;
-
-					foreach (Type interfaceType in classType.GetInterfaces())
-					{
-						if (interfaceType.FullName == "PluginInterface.IPlugin")
-						{
-							isValid = true;
-							break;
-						}
-					}
-
-					// No IPlugin? We don't want it.
-					if (!isValid)
-						continue;*/
-
 					// Make sure it's a plugin
 					if (!typeof(Plugin).IsAssignableFrom(classType))
 						continue;
@@ -103,7 +88,7 @@ namespace HTCButton
 					
 					// If it's got a GUI, we need to init that.
 					if (pluginInternal is PluginWithSettings)
-						((PluginWithSettings)pluginInternal).InitializeGUI();
+						((PluginWithSettings)pluginInternal).InitializeGUIs(_guiNames);
 
 					// Add it to our list
 					AvailablePlugin plugin = new AvailablePlugin(fileName, classType.FullName, pluginInternal);

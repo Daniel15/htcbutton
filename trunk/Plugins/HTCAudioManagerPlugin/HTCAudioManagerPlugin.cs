@@ -13,9 +13,9 @@ namespace HTCAudioManagerPlugin
 		public override string Author { get { return "Daniel15"; } }
 		public override string Version { get { return "0.0.2"; } }
 
-		public override void InitializeGUI()
+		public override PluginSettingsControl InitializeGUI()
 		{
-			ConfigInterface = new frmSettings();
+			return new frmSettings();
 		}
 
 		public override void Execute()

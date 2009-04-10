@@ -25,9 +25,9 @@ namespace HelloWorld2Plugin
 		 * Take a look at frmSettings.cs to see how the settings are loaded and
 		 * saved.
 		 */
-		public override void InitializeGUI()
+		public override PluginSettingsControl InitializeGUI()
 		{
-			ConfigInterface = new frmSettings();
+			return new frmSettings();
 		}
 
 		public override void Execute()

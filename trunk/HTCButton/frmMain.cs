@@ -39,8 +39,8 @@ namespace HTCButton
 		{
 			InitializeComponent();
 			// TODO: Remove this when this feature works.
-			tabsMain.TabPages.RemoveAt(1);
-			tabsMain.SelectedIndex = 0;
+			//tabsMain.TabPages.RemoveAt(1);
+			//tabsMain.SelectedIndex = 0;
 
 			// Set the version string
 			lblVersion.Text = String.Format(lblVersion.Text, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
@@ -50,27 +50,34 @@ namespace HTCButton
 			foreach (KeyValuePair<string, AvailablePlugin> kvp in PluginServices.Plugins)
 			{
 				cmbDoubleTap.Items.Add(new ComboBoxValue(kvp.Key, kvp.Value));
-				//cmbHold.Items.Add(new ComboBoxValue(kvp.Key, kvp.Value));
+				cmbHold.Items.Add(new ComboBoxValue(kvp.Key, kvp.Value));
 			}
 
 			// Now, what plugins have we chosen?
-			RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY, true);
+			//RegistryKey regKey = Registry.LocalMachine.OpenSubKey(REGISTRY_KEY, true);
+			RegistryKey regKey = Registry.LocalMachine.CreateSubKey(REGISTRY_KEY);
 
-			RegistryKey doubleTapKey = regKey.CreateSubKey("DoubleTap");
-			// Do we have some info on double tap?
-			if (doubleTapKey != null && (string)doubleTapKey.GetValue("File", "") != "")
+			// Restore our selected plugins
+			RestoreSelection(cmbDoubleTap, regKey.CreateSubKey("DoubleTap"));
+		}
+
+
+		private void RestoreSelection(ComboBox comboBox, RegistryKey regKey)
+		{
+			// If we don't have any info, just leave.
+			if (regKey == null || (string)regKey.GetValue("File", "") == "")
+				return;
+
+			string dllFile = (string)regKey.GetValue("File", "");
+			string className = (string)regKey.GetValue("Class", "");
+
+			//cmbDoubleTap.SelectedValue = dllFile + "/" + className;
+			for (int i = 0; i < comboBox.Items.Count; i++)
 			{
-				string dllFile = (string)doubleTapKey.GetValue("File", "");
-				string className = (string)doubleTapKey.GetValue("Class", "");
-
-				//cmbDoubleTap.SelectedValue = dllFile + "/" + className;
-				for (int i = 0; i < cmbDoubleTap.Items.Count; i++)
+				if (((ComboBoxValue)comboBox.Items[i]).key == dllFile + "/" + className)
 				{
-					if (((ComboBoxValue)cmbDoubleTap.Items[i]).key == dllFile + "/" + className)
-					{
-						cmbDoubleTap.SelectedIndex = i;
-						break;
-					}
+					comboBox.SelectedIndex = i;
+					break;
 				}
 			}
 		}
@@ -93,11 +100,12 @@ namespace HTCButton
 			if (plugin.Plugin is PluginWithSettings)
 			{
 				PluginWithSettings pws = (PluginWithSettings)plugin.Plugin;
-				pws.ConfigInterface.Dock = DockStyle.Fill;
+				PluginSettingsControl psc = pws.ConfigInterface("doubleTap");
+				psc.Dock = DockStyle.Fill;
 				// Before we add it, let's tell it to load the settings.
-				pws.SettingsRegKey = REGISTRY_KEY + "\\DoubleTap";
-				pws.LoadSettings();
-				pnlDoubleTap.Controls.Add(pws.ConfigInterface);
+				psc.SettingsRegKey = REGISTRY_KEY + "\\DoubleTap";
+				psc.LoadSettings();
+				pnlDoubleTap.Controls.Add(psc);
 			}
 		}
 
@@ -119,13 +127,13 @@ namespace HTCButton
 			if (doubleTap.Plugin is PluginWithSettings)
 			{
 				PluginWithSettings doubleTapPlugin = (PluginWithSettings)doubleTap.Plugin;
-				Dictionary<string, string> settings = doubleTapPlugin.SaveSettings();
+				Dictionary<string, string> settings = doubleTapPlugin.ConfigInterface("doubleTap").SaveSettings();
 				foreach (KeyValuePair<string, string> kvp in settings)
 				{
 					doubleTapKey.SetValue(kvp.Key, kvp.Value);
 				}
 
-				doubleTapPlugin.LoadSettings();
+				doubleTapPlugin.ConfigInterface("doubleTap").LoadSettings();
 
 			}
 			// Save info on the plugin itself.
