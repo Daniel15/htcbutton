@@ -12,15 +12,15 @@ namespace RunAppPlugin
 		public override string Author { get { return "Daniel15"; } }
 		public override string Version { get { return "0.1"; } }
 
-		public override void InitializeGUI()
+		public override PluginSettingsControl InitializeGUI()
 		{
-			ConfigInterface = new frmSettings();
+			return new frmSettings();
 		}
 
 		public override void Execute()
 		{
 			string app = GetSetting("app", "");
-
+			
 		}
 	}
 }

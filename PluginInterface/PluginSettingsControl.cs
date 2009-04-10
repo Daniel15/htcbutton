@@ -2,12 +2,14 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace PluginInterface
 {
 	public class PluginSettingsControl : UserControl 
 	{
 		private PluginWithSettings _owner;
+		private RegistryKey _settingsKey;
 
 		public PluginWithSettings Owner
 		{
@@ -40,14 +42,26 @@ namespace PluginInterface
 		}
 
 		/// <summary>
-		/// Get a particular setting
+		/// Get a particular setting. Used in the GUI.
 		/// </summary>
 		/// <param name="key">Setting to get</param>
 		/// <param name="defaultValue">Default value to use</param>
 		/// <returns>What the setting is set to, or defaultValue if not set</returns>
 		protected string GetSetting(string key, string defaultValue)
 		{
-			return _owner.GetSetting(key, defaultValue);
+			return (string)_settingsKey.GetValue(key, defaultValue);
+		}
+
+		/// <summary>
+		/// Internal property that should not be used by you. :P
+		/// </summary>
+		public string SettingsRegKey
+		{
+			set
+			{
+				_settingsKey = Registry.LocalMachine.OpenSubKey(value);
+				Debug.WriteLine(String.Format("Set _settingsKey to {0}", value), "PluginWithSettings");
+			}
 		}
 	}
 }

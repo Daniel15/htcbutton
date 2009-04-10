@@ -24,6 +24,7 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		DoubleTap Only|Any CPU = DoubleTap Only|Any CPU
 		HTCButton Only|Any CPU = HTCButton Only|Any CPU
+		PluginsOnly|Any CPU = PluginsOnly|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
@@ -34,6 +35,7 @@ Global
 		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.HTCButton Only|Any CPU.ActiveCfg = HTCButton Only|Any CPU
 		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.HTCButton Only|Any CPU.Build.0 = HTCButton Only|Any CPU
 		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.HTCButton Only|Any CPU.Deploy.0 = HTCButton Only|Any CPU
+		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.PluginsOnly|Any CPU.ActiveCfg = PluginsOnly|Any CPU
 		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC0F42F9-2B86-4116-A4B1-6EBDA3FB9003}.Release|Any CPU.Deploy.0 = Release|Any CPU
@@ -45,6 +47,8 @@ Global
 		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.DoubleTap Only|Any CPU.Deploy.0 = DoubleTap Only|Any CPU
 		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.HTCButton Only|Any CPU.ActiveCfg = HTCButton Only|Any CPU
 		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.HTCButton Only|Any CPU.Build.0 = HTCButton Only|Any CPU
+		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.PluginsOnly|Any CPU.ActiveCfg = PluginsOnly|Any CPU
+		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.PluginsOnly|Any CPU.Build.0 = PluginsOnly|Any CPU
 		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8624CBC5-621D-4A3A-A407-B192CE19BF5C}.Release|Any CPU.Deploy.0 = Release|Any CPU
@@ -53,24 +57,30 @@ Global
 		{491010A1-3BE6-4161-8E2B-56693F829E7E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{491010A1-3BE6-4161-8E2B-56693F829E7E}.DoubleTap Only|Any CPU.ActiveCfg = DoubleTap Only|Any CPU
 		{491010A1-3BE6-4161-8E2B-56693F829E7E}.HTCButton Only|Any CPU.ActiveCfg = HTCButton Only|Any CPU
+		{491010A1-3BE6-4161-8E2B-56693F829E7E}.PluginsOnly|Any CPU.ActiveCfg = PluginsOnly|Any CPU
+		{491010A1-3BE6-4161-8E2B-56693F829E7E}.PluginsOnly|Any CPU.Build.0 = PluginsOnly|Any CPU
 		{491010A1-3BE6-4161-8E2B-56693F829E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.DoubleTap Only|Any CPU.ActiveCfg = DoubleTap Only|Any CPU
 		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.HTCButton Only|Any CPU.ActiveCfg = HTCButton Only|Any CPU
+		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.PluginsOnly|Any CPU.ActiveCfg = PluginsOnly|Any CPU
+		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.PluginsOnly|Any CPU.Build.0 = PluginsOnly|Any CPU
 		{8B5050C1-7C11-4970-9C77-7EB957DCEE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.DoubleTap Only|Any CPU.ActiveCfg = DoubleTap Only|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.HTCButton Only|Any CPU.ActiveCfg = HTCButton Only|Any CPU
+		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.PluginsOnly|Any CPU.ActiveCfg = PluginsOnly|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE2270CA-E39E-46CC-B999-012DBDD79ACC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{6A4F97EE-FE59-4B2D-BB92-2CC802737AD7}.Debug|Any CPU.ActiveCfg = Debug
 		{6A4F97EE-FE59-4B2D-BB92-2CC802737AD7}.DoubleTap Only|Any CPU.ActiveCfg = DoubleTap Only
 		{6A4F97EE-FE59-4B2D-BB92-2CC802737AD7}.HTCButton Only|Any CPU.ActiveCfg = HTCButton Only
+		{6A4F97EE-FE59-4B2D-BB92-2CC802737AD7}.PluginsOnly|Any CPU.ActiveCfg = PluginsOnly
 		{6A4F97EE-FE59-4B2D-BB92-2CC802737AD7}.Release|Any CPU.ActiveCfg = Release
 		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -79,6 +89,7 @@ Global
 		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.DoubleTap Only|Any CPU.Build.0 = DoubleTap Only|Any CPU
 		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.DoubleTap Only|Any CPU.Deploy.0 = DoubleTap Only|Any CPU
 		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.HTCButton Only|Any CPU.ActiveCfg = HTCButton Only|Any CPU
+		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.PluginsOnly|Any CPU.ActiveCfg = PluginsOnly|Any CPU
 		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{02B4943F-E495-4D59-BDF0-817612FC8DB2}.Release|Any CPU.Deploy.0 = Release|Any CPU
@@ -89,6 +100,7 @@ Global
 		{C408E38C-C817-4DB0-AE20-DF25DED847CE}.DoubleTap Only|Any CPU.Build.0 = Debug|Any CPU
 		{C408E38C-C817-4DB0-AE20-DF25DED847CE}.HTCButton Only|Any CPU.ActiveCfg = Release|Any CPU
 		{C408E38C-C817-4DB0-AE20-DF25DED847CE}.HTCButton Only|Any CPU.Build.0 = Release|Any CPU
+		{C408E38C-C817-4DB0-AE20-DF25DED847CE}.PluginsOnly|Any CPU.ActiveCfg = PluginsOnly|Any CPU
 		{C408E38C-C817-4DB0-AE20-DF25DED847CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C408E38C-C817-4DB0-AE20-DF25DED847CE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C408E38C-C817-4DB0-AE20-DF25DED847CE}.Release|Any CPU.Deploy.0 = Release|Any CPU

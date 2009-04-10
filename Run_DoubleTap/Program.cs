@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using PluginInterface;
 
 namespace Run_DoubleTap
